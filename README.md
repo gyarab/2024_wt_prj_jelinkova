@@ -15,3 +15,4 @@ Na stránce nabídka je vyhledávač konkrétních jídel či nápojů, vedle n�
 Stránka kontakty obsahuje kartu, na které je na obrázku vyznačená adresa kavárny na mapě, pod ní jsou napsané možné způsoby kontaktování (adresa, telefonní číslo a e-mail). Pod ní je druhá karta s názvem 'O nás', kde je obrázek kolektivu a krátký text o kavárně a zaměstnancích.
 
 ## Wireframes
+![Wireframes](WA_wireframes.png)
