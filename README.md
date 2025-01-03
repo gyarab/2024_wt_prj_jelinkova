@@ -1,6 +1,6 @@
 # Kavárna Penelope
 
-*Autor: Jana Jelínková*
+*Autor: Jana Jelínková jana.jelinkova.s@gyarab.cz*
 
 ## Odborný článek 
 
