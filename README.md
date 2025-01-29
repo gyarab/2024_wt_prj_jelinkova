@@ -16,3 +16,5 @@ Stránka kontakty obsahuje kartu, na které je na obrázku vyznačená adresa ka
 
 ## Wireframes
 ![Wireframes](WA_wireframes.png)
+## DB schéma
+![DBschema](WA_DBschema.png)
