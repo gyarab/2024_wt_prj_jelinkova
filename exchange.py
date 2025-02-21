@@ -23,25 +23,31 @@ kurz = float(kurz_str)
 # print(kurz_str)
 
 while True:
-    vstup = input("Zadejte castku: ")
+    vstup = input("Prosim zadejte castku: ")
     try:
-        castka = int(vstup)
+        castka = float(vstup)
     except ValueError:
-        print("Neplatny vstup!")
+        print("Zadali jste neplatny vstup.")
+        continue
+    if castka <= 0:
+        print("Zadali jste neplatny vstup.")
         continue
     break
+    
 
 while True:
-    vstup = input("Zadejte smer prevodu (EUR->CZK / CZK->EUR): ")
+    vstup = input("Pro prevod z CZK na EUR napis '1', z EUR na CZK '2': ")
     prevod = str(vstup)
-    if prevod != "EUR->CZK" and prevod != "CZK->EUR":
-        print("Neplatny vstup!")
+    if prevod != "1" and prevod != "2":
+        print("Zadali jste neplatny vstup.")
         continue
-    if prevod == "EUR->CZK":
+    if prevod == "2":
         vysledek = castka * kurz
+        mena = "korun ceskych"
         break
-    if prevod == "CZK->EUR":
+    if prevod == "1":
         vysledek = castka / kurz
+        mena = "eur"
         break
 
-print(f"Vysledek je {vysledek}")
+print(f"Vysledek je {vysledek}" + " " + mena + ".")
