@@ -8,19 +8,54 @@ r = httpx.get(url)
 
 lines = r.text.split("\n")
 
-for line in lines:
-    if "|EUR|" in line:
-        row = line
+povolene_meny = {"AUD", "BRL", "BGN", "CNY", "DKK", "EUR", "CZK", "PHP", "HKD", "INR", "IDR", "ISK", "ILS", "JPY", "ZAR", "CAD", "KRW", "HUF", "MYR", "MXN", "XDR", "NOK", "NZD", "PLN", "RON", "SGD", "SEK", "CHF", "THB", "TRY", "USD", "GBP"}
+b = True
 
-# print(row)
+while b:
+    vstup = input("Prosim zadejte menu, ze ktere prevadite (EUR, CZK..): ")
+    mena_prvni = str(vstup).upper()
+    if mena_prvni in povolene_meny:
+        for line in lines:
+            if "|" + mena_prvni + "|" in line:
+                row = line
+                b = False
+                break
+    if mena_prvni == "CZK":
+        kurz_prvni = 1
+        mnozstvi_prvni = 1
+        b = False
 
-row_arr = row.split("|")
+if mena_prvni != "CZK":
+    row_arr = row.split("|")
 
-kurz_str = row_arr[-1]
-kurz_str = float(kurz_str.replace(",","."))
+    kurz_str = row_arr[-1]
+    kurz_prvni = float(kurz_str.replace(",","."))
 
-kurz = float(kurz_str)
-# print(kurz_str)
+    mnozstvi_prvni = float(row_arr[2])
+
+b = True
+
+while b:
+    vstup = input("Prosim zadejte menu, na kterou prevadite (EUR, CZK..): ")
+    mena_druha = str(vstup).upper()
+    if mena_druha in povolene_meny:
+        for line in lines:
+            if "|" + mena_druha + "|" in line:
+                row = line
+                b = False
+                break
+    if mena_druha == "CZK":
+        kurz_druhy = 1
+        mnozstvi_druhe = 1
+        b = False
+
+if mena_druha != "CZK":
+    row_arr = row.split("|")
+
+    kurz_str = row_arr[-1]
+    kurz_druhy = float(kurz_str.replace(",","."))
+
+    mnozstvi_druhe = float(row_arr[2])
 
 while True:
     vstup = input("Prosim zadejte castku: ")
@@ -33,21 +68,9 @@ while True:
         print("Zadali jste neplatny vstup.")
         continue
     break
-    
 
-while True:
-    vstup = input("Pro prevod z CZK na EUR napis '1', z EUR na CZK '2': ")
-    prevod = str(vstup)
-    if prevod != "1" and prevod != "2":
-        print("Zadali jste neplatny vstup.")
-        continue
-    if prevod == "2":
-        vysledek = castka * kurz
-        mena = "korun ceskych"
-        break
-    if prevod == "1":
-        vysledek = castka / kurz
-        mena = "eur"
-        break
+vysledek = castka * (kurz_prvni / kurz_druhy) * (mnozstvi_druhe / mnozstvi_prvni)
 
-print(f"Vysledek je {vysledek}" + " " + mena + ".")
+print(f"Vysledek je {vysledek}" + " " + mena_druha + ".")
+# print(kurz_prvni)
+# print(kurz_druhy)
