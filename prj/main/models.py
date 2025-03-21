@@ -16,3 +16,10 @@ class Category(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+    
+class Review(models.Model):
+    content = models.TextField(max_length=400)
+    product = models.ForeignKey('Product', null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return f"{self.content} ({self.product})"
