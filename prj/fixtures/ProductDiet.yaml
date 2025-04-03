@@ -1,0 +1,5 @@
+- model: main.productdiet
+  pk: 1
+  fields:
+    product: 1
+    diet: 1

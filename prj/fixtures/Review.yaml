@@ -1,0 +1,7 @@
+- model: main.review
+  pk: 1
+  fields:
+    content: Je to úplná mňamina!
+    product: 1
+    user: 1
+    stars: 5

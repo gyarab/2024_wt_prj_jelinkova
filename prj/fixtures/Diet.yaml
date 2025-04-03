@@ -1,0 +1,4 @@
+- model: main.diet
+  pk: 1
+  fields:
+    name: Vegetariánská
