@@ -5,3 +5,10 @@
     product: 1
     user: 1
     stars: 5
+- model: main.review
+  pk: 2
+  fields:
+    content: Moc dobré.
+    product: 2
+    user: 2
+    stars: 4

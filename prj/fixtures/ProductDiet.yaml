@@ -2,4 +2,9 @@
   pk: 1
   fields:
     product: 1
+    diet: 2
+- model: main.productdiet
+  pk: 2
+  fields:
+    product: 2
     diet: 1

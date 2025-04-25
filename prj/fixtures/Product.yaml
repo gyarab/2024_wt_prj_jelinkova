@@ -1,4 +1,12 @@
-- model: main.category
+- model: main.product
   pk: 1
   fields:
-    name: Dezert
+    name: Tiramisu
+    price: 75
+    category: 1
+- model: main.product
+  pk: 2
+  fields:
+    name: Domácí limonáda
+    price: 60
+    category: 2

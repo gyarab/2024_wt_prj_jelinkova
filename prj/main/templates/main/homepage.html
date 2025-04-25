@@ -4,4 +4,18 @@
 <h1>Homepage</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At iure architecto explicabo autem distinctio asperiores laborum, quo excepturi eius quaerat nisi laudantium dignissimos repellat atque aspernatur tempore sapiente et voluptates.</p>
 <img src="https://placehold.co/600x400" alt="emoji" width="50" height="110"> 
+
+
+Dnes ma svatek {{ svatek }}
+{% for product in products %}
+    <h2>
+    {{ product.name }} ({{ product.price }})
+    </h2>
+    {{ product.category }}
+    <h5>
+    {{ product.diet.diet }}
+    </h5>
+{% endfor %}
+
+
 {% endblock %}

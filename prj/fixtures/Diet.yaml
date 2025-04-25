@@ -1,4 +1,8 @@
 - model: main.diet
   pk: 1
   fields:
+    name: Veganská
+- model: main.diet
+  pk: 2
+  fields:
     name: Vegetariánská
