@@ -15,6 +15,10 @@ Dnes ma svatek {{ svatek }}
     <h5>
     {{ product.diet.diet }}
     </h5>
+    {% empty %}
+    <p>
+        No products found.
+    </p>
 {% endfor %}
 
 
