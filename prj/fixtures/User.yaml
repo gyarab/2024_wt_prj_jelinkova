@@ -1,0 +1,8 @@
+- model: main.user
+  pk: 1
+  fields:
+    name: Barbora
+ model: main.user
+  pk: 2
+  fields:
+    name: Hamina
