@@ -1,4 +1,0 @@
-- model: main.user
-  pk: 1
-  fields:
-    name: Barbora
